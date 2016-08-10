@@ -7,5 +7,5 @@ Find.find("../#{$source}/") {|path|
   target = File.basename(path.sub(/_.*?shp/, '.geojson'))
   targets << target
   print "ogr2ogr -f GeoJSON #{target} #{path}\n"
-  print "topojson -q 1e6 -o #{target.sub('geojson', 'topojson')} #{target}\n"
+  print "topojson -p -q 1e6 -o #{target.sub('geojson', 'topojson')} #{target}\n"
 }

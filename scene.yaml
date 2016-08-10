@@ -63,9 +63,9 @@ layers:
     draw:
       text:
         font:
-          family: serif
           size: 10
-        text_source: function() {return '✈';}
+          fill: yellow
+        text_source: function() {return '✈ ' + feature.nam;}
         color: red
         priority: 1
   builtupa:
@@ -79,7 +79,7 @@ layers:
       text:
         font:
           size: 10
-        text_source: function() {return 'builtupp'}
+        text_source: nam
         color: white
         priority: 5
   coastl:
@@ -112,8 +112,7 @@ layers:
       text:
         font:
           size: 10
-        text_source: function() {return 'miscp';}
-        color: white
+        text_source: function() {return '🏢';}
         priority: 5
   polbnda:
     data: {source: polbnda}
@@ -121,6 +120,11 @@ layers:
       polygons:
         color: [0, 0.4, 0.1, 0.1]
         order: 0
+      text:
+        font:
+          size: 30
+          fill: [0.3, 0.3, 0.3, 0.3]
+        text_source: laa
   polbndl:
     data: {source: polbndl}
     draw:
@@ -133,8 +137,8 @@ layers:
       text:
         font:
           size: 10
-        text_source: function() {return '🚢';}
-        color: white
+          fill: yellow
+        text_source: function() {return '🚢 ' + feature.nam;}
         priority: 4
   raill:
     data: {source: raill}
@@ -148,6 +152,12 @@ layers:
       lines:
         color: aqua
         width: 1px
+      text:
+        font:
+          size: 10
+          fill: aqua
+        text_source: "function() {return (feature.nam == 'UNK') ? '' : feature.nam;}"
+        offset: [0, 6]
   roadl:
     data: {source: roadl}
     draw:
@@ -160,6 +170,6 @@ layers:
       text:
         font:
           size: 10
-        text_source: function() {return 'rstatp';}
-        color: white
+          fill: green
+        text_source: nam
         priority: 5
