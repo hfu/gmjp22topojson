@@ -1,0 +1,165 @@
+scene:
+  background:
+   color: '#222'
+sources:
+  airp:
+    type: TopoJSON
+    url: airp.topojson
+  builtupa:
+    type: TopoJSON
+    url: builtupa.topojson
+  builtupp:
+    type: TopoJSON
+    url: builtupp.topojson
+  coastl:
+    type: TopoJSON
+    url: coastl.topojson
+  ferryl:
+    type: TopoJSON
+    url: ferryl.topojson
+  inwatera:
+    type: TopoJSON
+    url: inwatera.topojson
+  miscl:
+    type: TopoJSON
+    url: miscl.topojson
+  miscp:
+    type: TopoJSON
+    url: miscp.topojson
+  polbnda:
+    type: TopoJSON
+    url: polbnda.topojson
+  polbndl:
+    type: TopoJSON
+    url: polbndl.topojson
+  portp:
+    type: TopoJSON
+    url: portp.topojson
+  raill:
+    type: TopoJSON
+    url: raill.topojson
+  riverl:
+    type: TopoJSON
+    url: riverl.topojson
+  roadl:
+    type: TopoJSON
+    url: roadl.topojson
+  rstatp:
+    type: TopoJSON
+    url: rstatp.topojson
+  ort:
+    type: Raster
+    url: //cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg
+    max_zoom: 4
+layers:
+  ort:
+    data: {source: ort}
+    draw:
+      raster:
+        color: [0.3, 0.3, 0.3]
+        order: 0
+  airp:
+    data: {source: airp}
+    draw:
+      text:
+        font:
+          family: serif
+          size: 10
+        text_source: function() {return '✈';}
+        color: red
+        priority: 1
+  builtupa:
+    data: {source: builtupa}
+    draw:
+      polygons:
+        color: red
+  builtupp:
+    data: {source: builtupp}
+    draw:
+      text:
+        font:
+          size: 10
+        text_source: function() {return 'builtupp'}
+        color: white
+        priority: 5
+  coastl:
+    data: {source: coastl}
+    draw:
+      lines:
+        order: 4
+        color: blue
+        width: 1px
+  ferryl:
+    data: {source: ferryl}
+    draw:
+      lines:
+        color: aqua
+        width: 1px
+  inwatera:
+    data: {source: inwatera}
+    draw:
+      polygons:
+        color: aqua
+  miscl:
+    data: {source: miscl}
+    draw:
+      lines:
+        color: gray
+        width: 1px
+  miscp:
+    data: {source: miscp}
+    draw:
+      text:
+        font:
+          size: 10
+        text_source: function() {return 'miscp';}
+        color: white
+        priority: 5
+  polbnda:
+    data: {source: polbnda}
+    draw:
+      polygons:
+        color: [0, 0.4, 0.1, 0.1]
+        order: 0
+  polbndl:
+    data: {source: polbndl}
+    draw:
+      lines:
+        color: red
+        width: 1px
+  portp:
+    data: {source: portp}
+    draw:
+      text:
+        font:
+          size: 10
+        text_source: function() {return '🚢';}
+        color: white
+        priority: 4
+  raill:
+    data: {source: raill}
+    draw:
+      lines:
+        color: gray
+        width: 2px
+  riverl:
+    data: {source: riverl}
+    draw:
+      lines:
+        color: aqua
+        width: 1px
+  roadl:
+    data: {source: roadl}
+    draw:
+      lines:
+        color: white
+        width: 1px
+  rstatp:
+    data: {source: rstatp}
+    draw:
+      text:
+        font:
+          size: 10
+        text_source: function() {return 'rstatp';}
+        color: white
+        priority: 5

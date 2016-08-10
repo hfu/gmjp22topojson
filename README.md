@@ -1,2 +1,2 @@
-# gmjp22topojson
-GeoJSON / TopoJSON data for Global Map Japan version 2.2
+# gm-topojson-converter
+GeoJSON/TopoJSON converting script for Global Map data
